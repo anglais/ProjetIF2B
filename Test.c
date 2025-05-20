@@ -55,8 +55,33 @@ void random_Bullshit_In_Test(){
 
 
 }
+// Déclaration de la structure position
+typedef struct {
+    int x;
+    int y;
+} Position;
 
+// Fonction pour permet de déplacer le fous
+void deplacerFou(int taille, char grille[size][size], Position *pos) {
+    // Efface l'ancienne position
+    grille[pos->x][pos->y] = ' ';
 
+    // Déplacement simple : diagonale bas-droite
+    pos->x++;
+    pos->y++;
+
+    // Vérifie les limites
+    if (pos->x >= size || pos->y >= size) {
+        // Remet à une position valide ou inverse direction (selon ce que tu veux)
+        pos->x = 0;
+        pos->y = 0;
+    }
+
+    // Met à jour la grille avec la nouvelle position du fou
+    grille[pos->x][pos->y] = '*';
+}
+    
+}
 
 //Se lance au début du jeu
 void game() {
