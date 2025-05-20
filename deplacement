@@ -4,7 +4,29 @@ typedef struct {
     int y;
 } Position;
 
-// Fonction pour simuler le déplacement d'un fou
+// Fonction pour déplacer le pion
+void deplacerPion(int size, char board[size][size], Position *pos) {
+    // Efface l'ancienne position
+    board[pos->x][pos->y] = ' ';
+
+    // Déplacement simple : haut-bas
+    pos->x++;
+    
+    // Si on dépasse le haut de la grille, on revient en bas
+    if (pos->x <0 ) {
+        pos->x = size - 1;
+    }
+
+    // Met à jour la grille avec la nouvelle position du fou
+    board[pos->x][pos->y] = '+';
+}
+
+// Fonction pour déplacer le cavalier
+
+
+
+
+// Fonction pour déplacer le fou
 void deplacerFou(int size, char board[size][size], Position *pos) {
     // Efface l'ancienne position
     board[pos->x][pos->y] = ' ';
@@ -23,3 +45,36 @@ void deplacerFou(int size, char board[size][size], Position *pos) {
     // Met à jour la grille avec la nouvelle position du fou
     board[pos->x][pos->y] = '*';
 }
+
+
+// Fonction pour déplacer la tour
+void deplacerTour(int size, char board[size][size], Position *pos) {
+    // Efface l'ancienne position
+    board[pos->x][pos->y] = ' ';
+
+    // Déplacement simple : haut-bas
+    pos->x++;
+
+    // Déplacement simple : gaughe-droite
+    pos->y++;
+    
+    // Si on dépasse le haut de la grille, on revient en bas
+    if (pos->x >= size ) {
+        pos->x = 0;
+    }
+    // Si on dépasse le droite de la grille, on revient à gauche
+    if (pos->y >= siz ) {
+        pos->y = 0;
+    }
+
+
+    // Met à jour la grille avec la nouvelle position du fou
+    board[pos->x][pos->y] = '+';
+}
+
+
+// Fonction pour déplacer la reine
+
+
+// Fonction pour déplacer le roi
+
