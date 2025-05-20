@@ -17,7 +17,7 @@ void deplacerPion(int size, char board[size][size], Position *pos) {
         pos->x = size - 1;
     }
 
-    // Met à jour la grille avec la nouvelle position du fou
+    // Met à jour la grille avec la nouvelle position du pion
     board[pos->x][pos->y] = '+';
 }
 
@@ -68,7 +68,7 @@ void deplacerTour(int size, char board[size][size], Position *pos) {
     }
 
 
-    // Met à jour la grille avec la nouvelle position du fou
+    // Met à jour la grille avec la nouvelle position du Tour
     board[pos->x][pos->y] = '+';
 }
 
